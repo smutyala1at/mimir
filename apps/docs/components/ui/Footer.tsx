@@ -151,6 +151,7 @@ export default function Footer() {
           <div className='flex flex-col gap-3 [&>a]:hover:underline'>
             <Link href="/resources" className='font-bold'>RESOURCES</Link>
             <Link href="/guides">Guides</Link>
+            <Link href="/ai">AI Features</Link>
             <Link href="https://docs.meshjs.dev/">Documentation</Link>
             <Link href="https://github.com/MeshJS/examples">Examples</Link>
             <Link href="https://pbl.meshjs.dev">Project Based Learning</Link>

@@ -16,7 +16,7 @@ import {
 } from "@icons-pack/react-simple-icons";
 import { Banner } from 'fumadocs-ui/components/banner';
 import { LargeSearchToggle, SearchToggle } from 'fumadocs-ui/components/layout/search-toggle';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Wand2Icon } from 'lucide-react';
 import { AISearchTrigger } from '@/components/ai';
 import { cn } from '@/lib/cn';
 import { buttonVariants } from '@/components/ui/button';
@@ -149,17 +149,6 @@ const navbarLinks: LinkItemType[] = [
               </span>
             </div>
           </NavbarMenuLink>
-          <NavbarMenuLink href="https://polkadot.meshjs.dev/en">
-            <div className="mr-3 h-5 w-5">
-              {iconResolver("icons/polkadot.svg")}
-            </div>
-            <div className="flex flex-col">
-              <span className="font-medium">Polkadot</span>
-              <span className="text-sm text-fd-muted-foreground">
-               Tools and resources for developers to build on Polkadot
-              </span>
-            </div>
-          </NavbarMenuLink>
           <NavbarMenuLink href="https://utxos.dev/">
             <div className="mr-3 h-5 w-5">
               {iconResolver("icons/mesh.svg")}
@@ -189,6 +178,15 @@ const navbarLinks: LinkItemType[] = [
               <span className="font-medium">Guides</span>
               <span className="text-sm text-fd-muted-foreground">
                 Whether you are new to web development or a seasoned blockchain full-stack developer, these guides will help you get started
+              </span>
+            </div>
+          </NavbarMenuLink>
+          <NavbarMenuLink href="/ai">
+            <Wand2Icon className="mr-3 h-5 w-5 text-amber-400" />
+            <div className="flex flex-col">
+              <span className="font-medium">AI Features</span>
+              <span className="text-sm text-fd-muted-foreground">
+                AI tools to help you ship faster
               </span>
             </div>
           </NavbarMenuLink>
