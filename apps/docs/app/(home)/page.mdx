@@ -102,7 +102,7 @@ import {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         {[
           {
             title: "Wallets",
@@ -184,7 +184,7 @@ import {
           }
         ].map((card) => (
           <Link key={card.title} href={card.href}>
-            <Card className="text-center hover:border-primary/50 transition-colors px-4 py-8">
+            <Card className="h-full text-center hover:border-primary/50 transition-colors px-4 py-8">
               <CardTitle className="font-heading">{card.title}</CardTitle>
               <CardDescription>{card.description}</CardDescription>
             </Card>
