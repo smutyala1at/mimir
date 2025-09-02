@@ -21,6 +21,7 @@ export function iconResolver(iconName?: string | null, className: string = ""): 
 
   return createElement('img', {
     src: `/${iconName}`,
+    key: `${iconName}`,
     alt: `${iconName} icon`,
     width: 20,
     height: 20,
