@@ -27,7 +27,7 @@ export default async function Page(props: {
         <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
         <ViewOptions
           markdownUrl={`${page.url}.mdx`}
-          githubUrl={`https://github.com/smutyala1at/meshjs-docs/blob/dev/apps/docs/content/docs/${page.path}`}
+          githubUrl={`https://github.com/MeshJS/mimir/tree/main/apps/docs/content/docs/${page.path}`}
         />
       </div>
       <DocsBody>

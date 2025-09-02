@@ -10,111 +10,32 @@ import {
   SiGithub
 } from "@icons-pack/react-simple-icons";
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
+import {team} from "@/data/team";
 
 <h1 className='text-center text-4xl mt-4'>Our Team</h1>
 
 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10 mb-32">
-  <div
-  className="flex flex-col items-center justify-center"
-  >
-  <Image
-    className='rounded-full'
-    src="/team/abdelkrim.png"
-    width={150}
-    height={150}
-    alt="abdelkrim"
-  />
-  <h1 className='text-center'>Abdelkrim</h1>
-  <div className='flex gap-5 items-center justify-center'>
-    <Link href='https://x.com/abdelkrimdev'><SiX className="w-5 h-5 text-foreground"/></Link>
-    <Link href='https://github.com/abdelkrimdev'><SiGithub className="w-6 h-6 text-foreground"/></Link>
-  </div>
-  </div>
-
-  <div
-  className="flex flex-col items-center justify-center"
-  >
-  <Image
-    className='rounded-full'
-    src="/team/erick.jpg"
-    width={150}
-    height={150}
-    alt="erick"
-  />
-  <h1 className='text-center'>Erick</h1>
-  <div className='flex gap-5 items-center justify-center'>
-    <Link href='https://x.com/ErickRomeroEdda'><SiX className="w-5 h-5 text-foreground"/></Link>
-    <Link href='https://github.com/ErickRomeroDev'><SiGithub className="w-6 h-6 text-foreground"/></Link>
-  </div>
-  </div>
-
-  <div
-  className="flex flex-col items-center justify-center"
-  >
-  <Image
-    className='rounded-full'
-    src="/team/felix.png"
-    width={150}
-    height={150}
-    alt="felix"
-  />
-  <h1 className='text-center'>Felix</h1>
-  <div className='flex gap-5 items-center justify-center'>
-    <Link href='https://x.com/CatalystSwarm'><SiX className="w-5 h-5 text-foreground"/></Link>
-    <Link href='https://github.com/Technosophorso'><SiGithub className="w-6 h-6 text-foreground"/></Link>
-  </div>
-  </div>
-
-  <div
-  className="flex flex-col items-center justify-center"
-  >
-  <Image
-    className='rounded-full'
-    src="/team/hinson.png"
-    width={150}
-    height={150}
-    alt="hinson"
-  />
-  <h1 className='text-center'>Hinson</h1>
-  <div className='flex gap-5 items-center justify-center'>
-    <Link href='https://x.com/HinsonSIDAN'><SiX className="w-5 h-5 text-foreground"/></Link>
-    <Link href='https://github.com/HinsonSIDAN'><SiGithub className="w-6 h-6 text-foreground"/></Link>
-  </div>
-  </div>
-
-  <div
-  className="flex flex-col items-center justify-center"
-  >
-  <Image
-    className='rounded-full'
-    src="/team/jingles.png"
-    width={150}
-    height={150}
-    alt="jingles"
-  />
-  <h1 className='text-center'>Jingles</h1>
-  <div className='flex gap-5 items-center justify-center'>
-    <Link href='https://x.com/jinglescode'><SiX className="w-5 h-5 text-foreground"/></Link>
-    <Link href='https://github.com/jinglescode'><SiGithub className="w-6 h-6 text-foreground"/></Link>
-    <Link href='https://github.com/jinglescode'><GlobeAltIcon className="w-7 h-7 text-foreground"/></Link>
-  </div>
-  </div>
-
-  <div
-  className="flex flex-col items-center justify-center"
-  >
-  <Image
-    className='rounded-full'
-    src="/team/tszwai.png"
-    width={150}
-    height={150}
-    alt="tszwai"
-  />
-  <h1 className='text-center'>Tszwai</h1>
-  <div className='flex gap-5 items-center justify-center'>
-    <Link href='https://github.com/twwu123'><SiGithub className="w-6 h-6 text-foreground"/></Link>
-  </div>
-  </div>
+  {
+    team.map((member) => (
+      <div
+      className="flex flex-col items-center justify-center"
+      key={member.name}
+      >
+        <Image
+          className='rounded-full'
+          src={`/team/${member.image}`}
+          width={150}
+          height={150}
+          alt={member.name}
+        />
+        <h1 className='text-center'>{member.name}</h1>
+        <div className='flex gap-5 items-center justify-center'>
+          <Link href={member.twitter}><SiX className="w-5 h-5 text-foreground"/></Link>
+          <Link href={member.github}><SiGithub className="w-6 h-6 text-foreground"/></Link>
+        </div>
+      </div>
+    ))
+  }
 </div>
 
 <div className='text-center mb-32'>

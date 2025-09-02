@@ -5,58 +5,18 @@ description: "From wallet integrations to transaction builders, Mesh makes Web3 
 
 import {
   Card,
-  CardAction,
-  CardContent,
   CardDescription,
-  CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  BoltIcon,
-  PaintBrushIcon,
-  RocketLaunchIcon,
-  WalletIcon,
-  BanknotesIcon,
-  MagnifyingGlassIcon,
-  WrenchScrewdriverIcon,
-  ComputerDesktopIcon,
-  DocumentCheckIcon,
-  CloudIcon,
-} from "@heroicons/react/24/solid";
+import {linksApi} from "@/data/links-api";
 import Link from "next/link";
 
-<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-  {[
-    {
-      title: "Wallets",
-      href: "/apis/wallets",
-      icon: <WalletIcon />,
-      description: "Wallets APIs for interacting with the blockchain"
-    },
-    {
-      title: "Transaction Builder",
-      href: "/apis/txbuilder",
-      icon: <BanknotesIcon />,
-      description: "Build transactions with cardano-cli like APIs"
-    },
-    {
-      title: "Transaction Parser",
-      href: "/apis/txparser",
-      icon: <MagnifyingGlassIcon />,
-      description: "Parse transactions for testing and rebuilding"
-    },
-    {
-      title: "Utilities",
-      href: "/apis/utilities",
-      icon: <WrenchScrewdriverIcon />,
-      description: "Serializers, resolvers and data types for converting between different formats"
-    },
-  ].map((card) => (
-    <Link key={card.title} href={card.href} className="no-underline">
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+  {linksApi.map((card) => (
+    <Link key={card.title} href={card.link} className="no-underline">
       <Card className="h-full text-center hover:border-primary/50 transition-colors px-4 py-8">
         <CardTitle className="font-heading">{card.title}</CardTitle>
-        <CardDescription>{card.description}</CardDescription>
+        <CardDescription>{card.desc}</CardDescription>
       </Card>
     </Link>
   ))}
