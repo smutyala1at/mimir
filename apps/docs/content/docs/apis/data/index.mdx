@@ -2,34 +2,22 @@
 title: "Data"
 description: "Useful utilities to parse and manipulate data"
 ---
+
+import {linksData} from "@/data/links-data";
+import Link from "next/link";
 import {
-  Bars2Icon,
-  Bars3Icon,
-  CircleStackIcon,
-} from "@heroicons/react/24/solid";
+  Card,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card";
 
-<Cards>
-  <Card href="/apis/data/overview" icon={<CircleStackIcon />}>
-    ### Data Overview [!toc]
-
-    Learn about the basics, and how Mesh handles Cardano data
-  </Card>
-
-  <Card href="/apis/data/mesh" icon={<Bars2Icon />}>
-    ### Mesh Data [!toc]
-
-    Parse and manipulate data with Mesh Data type
-  </Card>
-
-  <Card href="/apis/data/json" icon={<Bars3Icon />}>
-    ### JSON Data [!toc]
-
-    Parse and manipulate data with JSON
-  </Card>
-
-  <Card href="/apis/data/value" icon={<Bars3Icon />}>
-    ### Value [!toc]
-
-    Manipulate Value Easily
-  </Card>
-</Cards>
+<div className="grid md:grid-cols-2 gap-6 items-stretch">
+  {linksData.map((card) => (
+    <Link key={card.title} href={card.link} className="no-underline">
+      <Card className="h-full text-center hover:border-primary/50 transition-colors px-4 py-8">
+        <CardTitle className="font-heading">{card.title}</CardTitle>
+        <CardDescription>{card.desc}</CardDescription>
+      </Card>
+    </Link>
+  ))}
+</div>

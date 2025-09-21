@@ -6,36 +6,21 @@ icon: "icons/yaci.png"
 
 Custom Cardano devnet that can be created and reset in seconds using the user-friendly Yaci CLI. This allows for rapid iteration and experimentation, tailored to specific needs through flexible configuration options. The default devnet is optimized for speed, with customizable parameters for various testing scenarios. Integrated tools like the lightweight chain indexer Yaci Store and the browser-based Yaci Viewer enhance transaction building and submission. Yaci DevKit's compatibility with Blockfrost API endpoints ensures seamless integration with client SDKs.
 
-<Cards>
-  <Card
-    href="/yaci/getting-started"
-  >
-  ## Getting Started [!toc]
+import {linksYaci} from "@/data/links-yaci";
+import Link from "next/link";
+import {
+  Card,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card";
 
-  Set up Yaci Dev Kit and start the devnet
-  </Card>
-
-  <Card
-    href="https://cloud.meshjs.dev/yaci"
-  >
-  ## Hosted Yaci Devnet [!toc]
-
-  Connect to the hosted Yaci Devnet
-  </Card>
-
-  <Card
-    href="/yaci/transactions"
-  >
-  ## Build Transactions [!toc]
-
-  Building and submitting transactions on Yaci
-  </Card>
-
-  <Card
-    href="/providers/yaci"
-  >
-  ## Yaci Provider [!toc]
-
-  For fetching data and submitting transactions on Yaci
-  </Card>
-</Cards>
+<div className="grid md:grid-cols-2 gap-6 items-stretch">
+  {linksYaci.map((card) => (
+    <Link key={card.title} href={card.link} className="no-underline">
+      <Card className="h-full text-center hover:border-primary/50 transition-colors px-4 py-8">
+        <CardTitle className="font-heading">{card.title}</CardTitle>
+        <CardDescription>{card.desc}</CardDescription>
+      </Card>
+    </Link>
+  ))}
+</div>
