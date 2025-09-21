@@ -3,21 +3,21 @@ title: "Transaction Parser"
 description: "Parse transactions for testing and rebuilding"
 icon: MagnifyingGlassIcon
 ---
+import {linksTxParser} from "@/data/links-txparser";
+import Link from "next/link";
 import {
-  PaperAirplaneIcon,
-  ShieldCheckIcon,
-} from "@heroicons/react/24/solid";
+  Card,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card";
 
-<Cards>
-  <Card href="/apis/txparser/basics" icon={<PaperAirplaneIcon />}>
-    ## Parser Basics [!toc]
-
-    Parse transactions and rebuild
-  </Card>
-
-  <Card href="/apis/txparser/txtester" icon={<ShieldCheckIcon />}>
-    ## Unit Testing Transaction [!toc]
-
-    Parse and test transactions with various options
-  </Card>
-</Cards>
+<div className="grid md:grid-cols-2 gap-6 items-stretch">
+  {linksTxParser.map((card) => (
+    <Link key={card.title} href={card.link} className="no-underline">
+      <Card className="h-full text-center hover:border-primary/50 transition-colors px-4 py-8">
+        <CardTitle className="font-heading">{card.title}</CardTitle>
+        <CardDescription>{card.desc}</CardDescription>
+      </Card>
+    </Link>
+  ))}
+</div>

@@ -1,10 +1,8 @@
 ---
-title: "Layer 2 scaling solution"
-description: "Scaling solution for Cardano that increases transaction throughput and ensures cost efficiency while maintaining rigorous security."
-icon: "icons/hydra.svg"
+title: "Solutions"
+description: "Mesh provides a set of solutions to help you build blockchain applications"
 ---
-
-import {linksHydra} from "@/data/links-hydra";
+import {metaSolutions} from "@/data/links-solutions";
 import Link from "next/link";
 import {
   Card,
@@ -13,7 +11,7 @@ import {
 } from "@/components/ui/card";
 
 <div className="grid md:grid-cols-2 gap-6 items-stretch">
-  {linksHydra.map((card) => (
+  {metaSolutions.items.map((card) => (
     <Link key={card.title} href={card.link} className="no-underline">
       <Card className="h-full text-center hover:border-primary/50 transition-colors px-4 py-8">
         <CardTitle className="font-heading">{card.title}</CardTitle>

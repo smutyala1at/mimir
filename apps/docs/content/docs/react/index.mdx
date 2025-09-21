@@ -3,37 +3,21 @@ title: "React Components"
 description: "Frontend React UI components and React hooks"
 icon: ComputerDesktopIcon
 ---
+import {linksReact} from "@/data/links-react";
+import Link from "next/link";
 import {
-  BoltIcon,
-  PaintBrushIcon,
-  RocketLaunchIcon,
-} from "@heroicons/react/24/solid";
+  Card,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card";
 
-<Cards>
-  <Card
-    href="/react/getting-started"
-    icon={<RocketLaunchIcon />}
-  >
-  ## Getting Started with React [!toc]
-
-  Frontend components for wallet connections, and useful React hooks to getting wallet states
-  </Card>
-
-  <Card
-    href="/react/ui-components"
-    icon={<PaintBrushIcon />}
-  >
-  ## UI Components [!toc]
-
-  UI components to speed up your app development.
-  </Card>
-
-  <Card
-    href="/react/wallet-hooks"
-    icon={<BoltIcon />}
-  >
-  ## Wallet Hooks [!toc]
-
-  React hooks for interacting with connected wallets.
-  </Card>
-</Cards>
+<div className="grid md:grid-cols-2 gap-6 items-stretch">
+  {linksReact.map((card) => (
+    <Link key={card.title} href={card.link} className="no-underline">
+      <Card className="h-full text-center hover:border-primary/50 transition-colors px-4 py-8">
+        <CardTitle className="font-heading">{card.title}</CardTitle>
+        <CardDescription>{card.desc}</CardDescription>
+      </Card>
+    </Link>
+  ))}
+</div>
